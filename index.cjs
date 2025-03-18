@@ -169,6 +169,12 @@ app.get('/product/:prodNo', (req, res) => {
     res.json(product);
 });
 
+let cart = [];
+
+app.get('/cart', (req, res) => {
+  res.json(cart);
+});
+
 //Listen for connections.
 app.listen(port, () => {
   console.log('3000번 포트에서 backend server 실행중...');
