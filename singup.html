@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,7 @@
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
       body {
         margin: 0 auto;
@@ -143,10 +144,10 @@
     </style>
     <script>
       function init() {
-        const idObj = document.querySelector('#input_id');
-        const pwObj = document.querySelector('#input_password');
-        const pwCheckObj = document.querySelector('#check_password');
-        const nameObj = document.querySelector('#input_name');
+        const idObj = document.getElementById('input_id');
+        const pwObj = document.getElementById('input_password');
+        const pwCheckObj = document.getElementById('check_password');
+        const nameObj = document.getElementById('input_name');
         const btn = document.querySelector(
           '.singup_btn_box input[type=submit]'
         );

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,7 @@
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
       body {
         margin: 0 auto;
@@ -61,6 +62,7 @@
         border-radius: 10px;
         background-color: white;
         text-align: center;
+        box-sizing: border-box;
       }
       .login_box {
         position: relative;
@@ -137,8 +139,8 @@
     </style>
     <script>
       function init() {
-        const idObj = document.querySelector('#id');
-        const pwObj = document.querySelector('#password');
+        const idObj = document.getElementById('id');
+        const pwObj = document.getElementById('password');
         const btn = document.querySelector('.login_btn input[type=submit]');
         const formObj = document.querySelector('.login_form');
 
@@ -199,7 +201,7 @@
 
             if (res.ok) {
               alert('로그인 성공');
-              window.location.href = 'main.html';
+              window.location.href = 'starbucks.html';
             }
           } catch (error) {
             console.log('로그인 실패 : ', error);
