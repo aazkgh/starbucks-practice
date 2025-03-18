@@ -23,9 +23,6 @@ users.set('admin', { password: '1234', name: '관리자' });
 
 // request.body에 회원가입 정보를 json 형태로 왔다 가정 -> postman으로 테스트
 app.post('/singup', (req, res) => {
-  // users.forEach((value, index) => {
-  //   // console.log('id : ', index, ' value : ', value);
-  // });
   const { id, password, name } = req.body;
 
   if (users.has(id)) {
@@ -33,10 +30,6 @@ app.post('/singup', (req, res) => {
   }
 
   users.set(id, { password, name });
-
-  // users.forEach((value, index) => {
-  //   console.log('2. - ', value, index);
-  // });
 
   console.log('회원가입 성공!!', { id, name });
   res.status(200).json({
