@@ -5,7 +5,6 @@ const port = 3000;
 //CORS문제 해결
 const cors = require('cors');
 app.use(cors());
-<<<<<<< HEAD
 /*요청ContentType이 x-www-form-urlencoded인 경우
 요청의 body사용하고 싶다면 아래 함수를 사용하세요*/
 app.use(express.urlencoded({ extended: true }));
