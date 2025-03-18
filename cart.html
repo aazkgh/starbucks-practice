@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cart</title>
+    <style>
+      * {
+        background-color: #f2f1f0;
+      }
+      .cartList {
+        margin-left: 5dvh;
+      }
+
+      .cart-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      .cart-item img {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+      }
+      .cart-item div {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+    <script>
+      function order() {
+        const cartItems = document.querySelectorAll('.cart-item');
+        const orderList = [];
+
+        cartItems.forEach((item) => {
+          const imgSrc = item.querySelector('img').src;
+          const name = item
+            .querySelector('span:nth-child(1)')
+            .textContent.split(': ')[1];
+          const price = item
+            .querySelector('span:nth-child(2)')
+            .textContent.split(': ')[1];
+          const quantity = item
+            .querySelector('span:nth-child(3)')
+            .textContent.split(': ')[1];
+
+          orderList.push({ imgSrc, name, price, quantity });
+        });
+
+        localStorage.setItem('orderList', JSON.stringify(orderList));
+        window.location.href = 'orderList.html';
+      }
+    </script>
+  </head>
+  <body>
+    <section class="title">
+      <h1>장바구니</h1>
+    </section>
+    <section class="cartList">
+      <div class="cart-item">
+        <img src="images/C0007.jpg" alt="라테" />
+        <div>
+          <span>상품명: 라테</span>
+          <span>가격: 1000</span>
+          <span>수량: 2</span>
+        </div>
+      </div>
+      <div class="cart-item">
+        <img src="images/C0006.jpg" alt="바닐라라테" />
+        <div>
+          <span>상품명: 바닐라라테</span>
+          <span>가격: 1000</span>
+          <span>수량: 2</span>
+        </div>
+      </div>
+      <button onclick="order()">주문하기</button>
+    </section>
+  </body>
+</html>
