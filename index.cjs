@@ -123,6 +123,12 @@ app.get('/product/:prodNo', (req, res) => {
     res.json(product);
 });
 
+let cart = [];
+
+app.get('/cart', (req, res) => {
+  res.json(cart);
+});
+
 let orders = [];
 
 app.get('/orders', (req, res) => {
