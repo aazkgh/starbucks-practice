@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order List</title>
+    <script src="renderOrders.js"></script>
+    <style>
+      .orderList {
+        margin: 0 auto;
+        width: 80%;
+        font-weight: bold;
+      }
+      .orderList table {
+        width: 80%;
+        border-collapse: collapse;
+      }
+      .orderList th,
+      .orderList td {
+        border-bottom: 2px solid #00704a;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="title">
+      <h1>주문목록</h1>
+    </section>
+    <section class="orderList">
+      <table>
+        <thead>
+          <tr>
+            <th>주문번호</th>
+            <th>주문일자</th>
+            <th>상품번호</th>
+            <th>상품명</th>
+            <th>가격</th>
+            <th>주문수량</th>
+          </tr>
+        </thead>
+        <tbody id="orderTableBody"></tbody>
+      </table>
+    </section>
+  </body>
+</html>
