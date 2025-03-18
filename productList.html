@@ -26,6 +26,50 @@
             background-color: #F1F0EB;
         }
 
+        #navigation{
+            display: flex;
+            gap: 4.8rem;
+            align-items: flex-end;
+
+            width: 100%;
+            padding: 2.4rem 3.2rem 1.6rem;
+            font-size: 1.1rem;
+
+            &:hover{
+                background-color: #1E3932;
+                color: white;
+            }
+        }
+        .menu{
+            width: 100%;
+            height: fit-content;
+            margin: 1.2rem 2.4rem 1.2rem 0;
+
+            display: flex;
+            justify-content: space-between;
+
+            & a{
+                position: relative;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -0.5rem;
+                    height: 0.1rem;
+                    width: 100%;
+
+                    background: white;
+
+                    transition: transform 0.5s;
+                    transform: scaleX(0);
+
+                }
+                &:hover::after{
+                    transform: scaleX(1);
+                }
+            }
+        }
+
         #title{
             padding: 2.4rem;
 
@@ -93,6 +137,18 @@
     <script src="./productList.cjs"></script>
 </head>
 <body>
+    <header>
+        <nav id="navigation">
+            <a href="starbucks.html"><img src="./images/logo.png" alt="스타벅스 로고" /></a>
+            <ul class="menu">
+                <li><a href="productList.html">음료</a></li>
+                <li><a href="cart.html">장바구니</a></li>
+                <li><a href="orderList.html">주문목록</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="signUp.html">회원 가입</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <h1 id="title">음료 리스트</h1>
         <section id="beverage_list">
