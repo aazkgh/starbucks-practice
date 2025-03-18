@@ -135,6 +135,81 @@
         text-decoration: underline;
       }
     </style>
+    <script>
+      function init() {
+        const idObj = document.querySelector('#id');
+        const pwObj = document.querySelector('#password');
+        const btn = document.querySelector('.login_btn input[type=submit]');
+        const formObj = document.querySelector('.login_form');
+
+        btn.disabled = true;
+        pwObj.disabled = true;
+        btn.style.backgroundColor = 'gray';
+
+        function lenCheck(value) {
+          return value.length >= 4 && value.length <= 12;
+        }
+
+        function pwLen(value) {
+          return value.length >= 4 && value.length <= 16;
+        }
+
+        // id
+        idObj.addEventListener('keyup', () => {
+          const idValue = idObj.value;
+          if (lenCheck(idValue) == false) {
+            btn.style.backgroundColor = 'gray';
+            pwObj.disabled = true;
+          } else {
+            pwObj.disabled = false;
+          }
+        });
+
+        // pw
+        pwObj.addEventListener('keyup', () => {
+          if (pwLen(pwObj.value)) {
+            btn.style.backgroundColor = '#32734e';
+            btn.disabled = false;
+          } else {
+            btn.style.backgroundColor = 'gray';
+          }
+        });
+
+        // --- 로그인 요청 START --
+        formObj.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const formData = {
+            id: idObj.value,
+            password: pwObj.value,
+          };
+
+          try {
+            const res = await fetch('http://localhost:3000/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formData),
+            });
+
+            if (res.status == 401) {
+              const errorMessage = await res.text();
+              alert(errorMessage);
+              return;
+            }
+
+            if (res.ok) {
+              alert('로그인 성공');
+              window.location.href = 'main.html';
+            }
+          } catch (error) {
+            console.log('로그인 실패 : ', error);
+            alert('서버 오류 발생');
+          }
+        });
+        // --- 로그인 요청 END ---
+      }
+      window.addEventListener('load', init);
+    </script>
   </head>
   <body>
     <nav id="nav"></nav>

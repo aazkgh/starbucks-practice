@@ -56,6 +56,22 @@ app.post('/check', (req, res) => {
   return res.status(200).send('사용 가능한 아이디입니다.');
 });
 
+app.post('/login', (req, res) => {
+  const { id, password } = req.body;
+  if (!users.has(id)) {
+    return res.status(401).send('아이디를 확인해주세요.');
+  }
+  if (users.get(id).password != password) {
+    return res.status(401).send('아이디 또는 비밀번호를 확인해주세요.');
+  }
+
+  console.log(`로그인 성공 아이디 : ${id}`);
+  return res.status(201).json({
+    message: '로그인 성공',
+    data: { id },
+  });
+});
+
 //Listen for connections.
 app.listen(port, () => {
   console.log('3000번 포트에서 backend server 실행중...');
