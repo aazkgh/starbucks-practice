@@ -180,6 +180,12 @@ app.get('/cart', (req, res) => {
   res.json(cart);
 });
 
+let orders = [];
+
+app.get('/orders', (req, res) => {
+  res.json(orders);
+});
+
 //Listen for connections.
 app.listen(port, () => {
   console.log('3000번 포트에서 backend server 실행중...');
