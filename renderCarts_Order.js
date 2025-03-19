@@ -47,6 +47,7 @@ function order() {
     .then((response) => response.json())
     .then((data) => {
       alert(data.message);
+      cartData = [];
       window.location.href = 'orderList.html';
     })
     .catch((error) => {
