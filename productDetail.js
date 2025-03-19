@@ -70,7 +70,7 @@ btn_cart.addEventListener('click', function () {
     .then(result => {
         console.log('Success:', result);
         alert('장바구니에 추가되었습니다!');
-        window.location.href = 'http://localhost:5500/CartIn.html'; 
+        window.location.href = 'cart.html'; //내부 경로로 수정
     })
     .catch(error => {
         console.error('Error:', error);
