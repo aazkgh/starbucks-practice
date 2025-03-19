@@ -337,6 +337,13 @@ app.post('/cart', (req, res) => {
 
 
 
+app.post('/orders', (req, res) => {
+  const newOrder = req.body;
+  orders.push(newOrder);
+  cart = [];
+  res.json({ message: '주문이 저장되었습니다!', order: newOrder });
+});
+
 //Listen for connections.
 app.listen(port, () => {
   console.log('3000번 포트에서 backend server 실행중...');

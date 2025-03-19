@@ -27,3 +27,32 @@ function renderCarts() {
       });
     });
 }
+
+function order() {
+  if (cartData.length === 0) {
+    alert('장바구니가 비어 있습니다.');
+    return;
+  }
+  const orderData = {
+    orderId: Math.floor(Math.random() * 100) + 1, // 주문 ID (랜덤으로 생성)
+    date: new Date().toISOString().split('T')[0], // 주문 일자 (오늘 날짜)
+    items: cartData, // 장바구니 데이터
+  };
+
+  fetch('http://localhost:3000/orders', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(orderData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      alert(data.message);
+      cartData = [];
+      window.location.href = 'orderList.html';
+    })
+    .catch((error) => {
+      console.error('주문 오류:', error);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', renderCarts);
