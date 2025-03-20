@@ -141,6 +141,7 @@ app.get('/product/:productId', (req, res) => {
         return res.json({ message: '해당 상품을 찾을 수 없습니다.' });
     }
     res.json(product);
+});
 //get요청이 되었을때 할 일
 app.get('/', (req, res) => {
   res.send('WELCOME');
