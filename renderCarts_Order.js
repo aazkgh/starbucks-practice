@@ -16,7 +16,7 @@ function renderCarts() {
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
         cartItem.innerHTML = `
-          <img src="images/${item.img}" alt="${item.prodName}" />
+          <img src="${item.img}" alt="${item.prodName}" />
           <div>
             <span>상품명: ${item.prodName}</span>
             <span>가격: ${item.prodPrice}원</span>
