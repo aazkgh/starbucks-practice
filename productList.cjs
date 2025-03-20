@@ -16,8 +16,7 @@ async function showProductList() {
         productList.appendChild(prodBox);
 
         let imgBox = document.createElement('a');
-        imgBox.setAttribute('href', 'productDetail.html');    
-        imgBox.setAttribute('class', 'beverage_img_box');
+        imgBox.setAttribute('href', 'productDetail.html?id=' + encodeURIComponent(p.prodNo));        imgBox.setAttribute('class', 'beverage_img_box');
         prodBox.appendChild(imgBox);
 
         let prodImg = document.createElement('img');

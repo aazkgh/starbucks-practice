@@ -16,7 +16,7 @@ app.use(express.json());
 //---상품 정보 선언 start---
 const products = [
     { 
-        id: "C0001", 
+        id: "americano_hot", 
         category:"에스프레소",
         name_ko: "카페 아메리카노", 
         name_en: "Caffe Americano", 
@@ -29,10 +29,10 @@ const products = [
         sugar: 0, 
         caffeine: 150, 
         caution: "없음", 
-        image: "images/C0001.jpg"
+        image: "./images/americano_hot.jpg"
     },
     { 
-        id: "C0002", 
+        id: "americano_ice", 
         category:"에스프레소",
         name_ko: "아이스 카페 아메리카노", 
         name_en: "Iced Caffe Americano", 
@@ -45,14 +45,14 @@ const products = [
         sugar: 0, 
         caffeine: 150, 
         caution: "없음", 
-        image: "images/C0002.jpg"
+        image: "./images/americano_ice.jpg"
     },
     { 
-        id: "C0003", 
+        id: "latte_hot", 
         category:"에스프레소",
         name_ko: "카페 라떼", 
         name_en: "Caffe Latte", 
-        price: "5200", 
+        prhot: "5200", 
         intro: "풍부하고 진한 에스프레소가 신선한 스팀 밀크를 만나 부드러워진 커피 위에 우유 거품을 살짝 얹은 대표적인 커피 라떼", 
         kcal: 180, 
         fat: 5, 
@@ -61,10 +61,10 @@ const products = [
         sugar: 13, 
         caffeine: 75, 
         caution: "우유", 
-        image: "images/C0003.jpg"
+        image: "./images/latte_ice.jpg"
     },
     { 
-        id: "C0004", 
+        id: "latte_ice", 
         category:"에스프레소",
         name_ko: "아이스 카페 라떼", 
         name_en: "Iced Caffe Latte", 
@@ -77,10 +77,10 @@ const products = [
         sugar: 8, 
         caffeine: 75, 
         caution: "우유", 
-        image: "images/C0004.jpg"
+        image: "./images/images/latte_ice.jpg"
     },
     { 
-        id: "C0005", 
+        id: "flat_white", 
         category:"콜드 브루",
         name_ko: "콜드 브루 몰트", 
         name_en: "Cold Brew Malt", 
@@ -93,10 +93,10 @@ const products = [
         sugar: 41, 
         caffeine: 190, 
         caution: "대두/우유", 
-        image: "images/C0005.jpg"
+        image: "./images/images/flat_white.jpg"
     },
     { 
-        id: "C0006", 
+        id: "milk_shake", 
         category:"브레베",
         name_ko: "라벤더 카페 브레베", 
         name_en: "Lavender Cafe Breve", 
@@ -109,10 +109,10 @@ const products = [
         sugar: 30, 
         caffeine: 105, 
         caution: "우유", 
-        image: "images/C0006.jpg"
+        image: "./images/images/milk_shake.jpg"
     },
     { 
-        id: "C0007", 
+        id: "milk_tea", 
         category:"라떼",
         name_ko: "바닐라빈 라떼", 
         name_en: "Vanilla Bean Latte", 
@@ -125,7 +125,7 @@ const products = [
         sugar: 27, 
         caffeine: 210, 
         caution: "우유", 
-        image: "images/C0007.jpg"
+        image: "./images/images/milk_tea.jpg"
     }
     ];
 
