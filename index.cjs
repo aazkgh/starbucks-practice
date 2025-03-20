@@ -53,7 +53,7 @@ const products = [
     category: '에스프레소',
     name_ko: '카페 라떼',
     name_en: 'Caffe Latte',
-    prhot: '5200',
+    price: '5200',
     intro:
       '풍부하고 진한 에스프레소가 신선한 스팀 밀크를 만나 부드러워진 커피 위에 우유 거품을 살짝 얹은 대표적인 커피 라떼',
     kcal: 180,
@@ -328,8 +328,9 @@ app.get('/orders', (req, res) => {
 
 // 장바구니 데이터 저장 (POST 요청)
 app.post('/cart', (req, res) => {
-  cartData = req.body; // 받은 데이터를 저장
-  res.json({ message: '장바구니에 추가됨', data: cart });
+  const newCart = req.body; // 받은 데이터를 저장
+  cart.push(newCart);
+  res.json({ message: '주문이 저장되었습니다!' });
 });
 
 // 장바구니 데이터 가져오기 (GET 요청)
