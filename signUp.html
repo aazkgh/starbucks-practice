@@ -15,17 +15,11 @@
         color: inherit;
       }
       body {
+        height: 100dvh;
+        display: flex 1;
         margin: 0 auto;
         background-color: #f2f0ef;
       }
-      /* #nav {
-        position: fixed;
-        width: 100%;
-        height: 110px;
-        top: 0;
-        background-color: #f1f0eb;
-        z-index: 100;
-      } */
       #navigation {
         display: flex;
         gap: 4.8rem;
@@ -74,34 +68,30 @@
         height: 120px;
       }
       .text_singup {
-        margin-top: 20px;
         text-align: center;
         padding: 30px;
         color: rgb(255, 255, 255);
         position: relative; /* 요소를 배경 위로 올리기 위해 추가 */
         font-size: 25px;
         font-weight: 450;
-        z-index: 1;
       }
       .back_img {
-        position: absolute;
-        top: 13%;
-        left: 0;
-        width: 100%;
-        height: 1200px;
+        overflow: auto;
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100vh; /* 화면 전체 높이 설정 */
         background-image: url('./images/singup_background.jpg');
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 100% 100%;
+        background-size: cover; /* 배경 이미지가 화면을 꽉 채우도록 설정 */
         background-attachment: fixed;
-        filter: blur(1px);
       }
       .box {
         position: relative;
         left: 50%;
         transform: translate(-50%);
         width: 530px;
-        height: 700px;
+        height: 650px;
         border-radius: 10px;
         background-color: white;
         text-align: center;
@@ -118,7 +108,6 @@
       }
       .singup_form {
         width: 100%;
-        height: 600px;
         position: absolute;
         text-align: left;
         left: 50%;
@@ -177,15 +166,6 @@
       }
       .singup_btn_box input[type='submit']:hover {
         text-decoration: underline;
-      }
-      #footer {
-        position: absolute;
-        background-color: #312a2a;
-        width: 100%;
-        height: 500px;
-        top: 90%;
-        border: 2px solid black;
-        margin-top: 250px;
       }
     </style>
     <script>
@@ -349,65 +329,65 @@
         </ul>
       </nav>
     </header>
-    <h2 class="text_singup">회원가입</h2>
-    <div class="back_img"></div>
-    <section class="box">
-      <img
-        src="./images/singup_title.png"
-        class="singup_title_img"
-        alt="타이틀 이미지"
-      /><br />
-      <div class="welcome_msg1">회원정보</div>
-      <div class="welcome_msg2">를 입력해 주세요.</div>
-      <hr />
-      <div class="singup_box">
-        <form class="singup_form">
-          <div class="input_id_box">
-            <input
-              type="text"
-              id="input_id"
-              name="input_id"
-              placeholder="아이디"
-            />
-            <input type="button" class="check_id_btn" value="중복확인" />
-            <p class="id_text"></p>
-          </div>
-          <hr />
-          <div class="input_password_box">
-            <input
-              type="password"
-              id="input_password"
-              name="input_password"
-              placeholder="비밀번호"
-            />
-            <p class="password_text"></p>
-          </div>
-          <hr />
-          <div class="check_password_box">
-            <input
-              type="password"
-              id="check_password"
-              name="check_password"
-              placeholder="비밀번호 확인"
-            />
-            <p class="password_check_text"></p>
-          </div>
-          <hr />
-          <div class="input_name_box">
-            <input
-              type="text"
-              id="input_name"
-              name="input_name"
-              placeholder="이름"
-            />
-            <p class="name_text"></p>
-          </div>
-          <div class="singup_btn_box">
-            <input type="submit" value="회원가입" />
-          </div>
-        </form>
-      </div>
-    </section>
-    <footer id="footer"></footer>
+    <main class="back_img">
+      <h2 class="text_singup">회원가입</h2>
+      <section class="box">
+        <img
+          src="./images/singup_title.png"
+          class="singup_title_img"
+          alt="타이틀 이미지"
+        /><br />
+        <div class="welcome_msg1">회원정보</div>
+        <div class="welcome_msg2">를 입력해 주세요.</div>
+        <hr />
+        <div class="singup_box">
+          <form class="singup_form">
+            <div class="input_id_box">
+              <input
+                type="text"
+                id="input_id"
+                name="input_id"
+                placeholder="아이디"
+              />
+              <input type="button" class="check_id_btn" value="중복확인" />
+              <p class="id_text"></p>
+            </div>
+            <hr />
+            <div class="input_password_box">
+              <input
+                type="password"
+                id="input_password"
+                name="input_password"
+                placeholder="비밀번호"
+              />
+              <p class="password_text"></p>
+            </div>
+            <hr />
+            <div class="check_password_box">
+              <input
+                type="password"
+                id="check_password"
+                name="check_password"
+                placeholder="비밀번호 확인"
+              />
+              <p class="password_check_text"></p>
+            </div>
+            <hr />
+            <div class="input_name_box">
+              <input
+                type="text"
+                id="input_name"
+                name="input_name"
+                placeholder="이름"
+              />
+              <p class="name_text"></p>
+            </div>
+            <div class="singup_btn_box">
+              <input type="submit" value="회원가입" />
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

@@ -19,18 +19,11 @@
       }
 
       body {
-        height: 100%;
-        margin: 0;
+        height: 100dvh;
+        display: flex 1;
+        margin: auto 0;
         background-color: #f1f0eb;
       }
-      /* #nav {
-        position: fixed;
-        width: 100%;
-        height: 110px;
-        top: 0;
-        background-color: #f1f0eb;
-        z-index: 100;
-      } */
       #navigation {
         display: flex;
         gap: 4.8rem;
@@ -74,7 +67,6 @@
         }
       }
       .text_logo {
-        margin-top: 20px;
         text-align: center;
         padding: 30px;
         color: rgb(255, 255, 255);
@@ -92,20 +84,18 @@
         padding: 30px 0 30px 0;
       }
       .back_img {
-        position: absolute;
-        top: 13%;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        overflow: auto;
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100vh;
         background-image: url('./images/login_background.jpg');
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 100% 100%;
+        background-size: cover;
         background-attachment: fixed;
-        filter: blur(1px);
       }
       .box {
-        position: absolute;
+        position: relative;
         left: 50%;
         transform: translate(-50%);
         width: 530px;
@@ -141,7 +131,7 @@
         left: 5%;
         width: 90%;
         top: 30px;
-        height: 50px;
+        height: 70px;
       }
       .login_btn input[type='submit'] {
         padding: 10px 210px;
@@ -154,14 +144,6 @@
       }
       .login_btn input[type='submit']:hover {
         text-decoration: underline;
-      }
-      #footer {
-        position: absolute;
-        background-color: #312a2a;
-        width: 100%;
-        height: 500px;
-        top: 90%;
-        border: 2px solid black;
       }
       .login_form p {
         width: 90%;
@@ -279,52 +261,52 @@
         </ul>
       </nav>
     </header>
-    <div class="back_img"></div>
-    <h2 class="text_logo">로그인</h2>
-    <section class="box">
-      <div class="welcome_msg1">Welcome!</div>
-      <div class="welcome_msg2">스타벅스 코리아에 오신 것을 환영합니다.</div>
-      <hr />
-      <div class="login_box">
-        <form class="login_form">
-          <div class="id_box">
-            <input
-              type="text"
-              id="id"
-              name="id"
-              placeholder="아이디를 입력해 주세요."
-            />
-          </div>
-          <div class="pw_box">
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="비밀번호를 입력해 주세요."
-            />
-          </div>
-          <div class="save_box">
-            <input type="checkbox" id="save_id" name="save_id" />
-            <label for="save_id">아이디 저장</label>
-          </div>
-          <p class="login_btn">
-            <input type="submit" value="로그인" />
-          </p>
-          <p>
-            * 타 사이트와 비밀번호를 동일하게 사용할 경우 도용의 위험이
-            있으므로, 정기적인 비밀번호 변경을 해주시킬 바랍니다.
-          </p>
-          <p>
-            * 스타벅스 코리아의 공식 홈페이지는 Internet Explorer 9.0 이상,
-            Chrome, Firefox, Safari 브라우저에 최적화 되어있습니다.
-          </p>
-          <div class="service_login_box">
-            <a href="signUp.html">회원가입</a> | <a href="#">아이디 찾기</a> |
-            <a href="#">비밀번호 찾기</a>
-          </div>
-        </form>
-      </div>
-    </section>
-    <footer id="footer"></footer>
+    <main class="back_img">
+      <h2 class="text_logo">로그인</h2>
+      <section class="box">
+        <div class="welcome_msg1">Welcome!</div>
+        <div class="welcome_msg2">스타벅스 코리아에 오신 것을 환영합니다.</div>
+        <hr />
+        <div class="login_box">
+          <form class="login_form">
+            <div class="id_box">
+              <input
+                type="text"
+                id="id"
+                name="id"
+                placeholder="아이디를 입력해 주세요."
+              />
+            </div>
+            <div class="pw_box">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="비밀번호를 입력해 주세요."
+              />
+            </div>
+            <div class="save_box">
+              <input type="checkbox" id="save_id" name="save_id" />
+              <label for="save_id">아이디 저장</label>
+            </div>
+            <p class="login_btn">
+              <input type="submit" value="로그인" />
+            </p>
+            <p>
+              * 타 사이트와 비밀번호를 동일하게 사용할 경우 도용의 위험이
+              있으므로, 정기적인 비밀번호 변경을 해주시킬 바랍니다.
+            </p>
+            <p>
+              * 스타벅스 코리아의 공식 홈페이지는 Internet Explorer 9.0 이상,
+              Chrome, Firefox, Safari 브라우저에 최적화 되어있습니다.
+            </p>
+            <div class="service_login_box">
+              <a href="signUp.html">회원가입</a> | <a href="#">아이디 찾기</a> |
+              <a href="#">비밀번호 찾기</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
