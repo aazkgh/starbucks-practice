@@ -15,7 +15,8 @@ async function showProductList() {
         prodBox.setAttribute('class', 'beverage_box');
         productList.appendChild(prodBox);
 
-        let imgBox = document.createElement('div');
+        let imgBox = document.createElement('a');
+        imgBox.setAttribute('href', 'productDetail.html');    
         imgBox.setAttribute('class', 'beverage_img_box');
         prodBox.appendChild(imgBox);
 
@@ -27,7 +28,6 @@ async function showProductList() {
         
         
         let prodTitle = document.createElement('span');
-        prodTitle.setAttribute('href', 'productDetail.html');    
         prodTitle.innerText = p.prodName;   
         prodBox.appendChild(prodTitle);
     })
